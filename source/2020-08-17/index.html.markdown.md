@@ -9,7 +9,7 @@ This blog post provides instructions for deploying the Lex-Kendra chatbot on Gen
 
 Genesys Cloud uses the Genesys Cloud Lex integration to provide customers with a standard Amazon Lex chatbot. The Lex-Kendra chatbot solution combines this basic Lex chatbot with Amazon Kendra to create a Lex-Kendra self-service chatbot. This combination enables an Amazon Lex flow to invoke an AWS Lambda function to call Amazon Kendra after a customer initiates a chat and enters a triggering question. Amazon Kendra uses natural language processing and machine learning abilities to process the customer's question and search an informational database stored in Amazon S3. Amazon Kendra and AWS Lambda then route the discovered answer back into the customer chat. All of this occurs without live agent assistance.
 
-![Genesys Cloud and the Lex-Kendra Chatbot](/images/bpKendraOverviewMR.png)
+![Genesys Cloud and the Lex-Kendra Chatbot](bpKendraOverviewMR.png)
 
 ### Solution components:
 
@@ -115,7 +115,7 @@ This blueprint gives the minimum steps required to get the Lex-Kendra chatbot up
 
 1. From the Genesys Cloud admin menu, create an inbound chat flow in the normal manner. For more information, see the *Create an inbound chat flow* section in [Create a flow](https://help.mypurecloud.com/?p=3792 "Opens the Create a flow article").
 2. From the Architect / Inbound Chat Flow screen, delete any existing actions to begin with a clean flow.
-![Inbound Chat Flow screen](/images/bp_kendra_arch1.png)
+![Inbound Chat Flow screen](bp_kendra_arch1.png)
 3. On the menu to the right of the Start component, click **Toolbox > Data > Call Lexbot**.
 4. On the right side of the screen, under the **Bot Name** menu, select the name that you chose in the earlier procedure.
 5. Under the **Bot alias** menu, select the appropriate name.
@@ -153,7 +153,7 @@ You need to complete the following procedures in Genesys Cloud and the Genesys C
 
 4. From the Web Chat developer tool, under the **Deployment** menu, select the chat widget you created.
 5. Under the **Queue** menu, select the appropriate queue.
-![Web Chat developer tool](/images/bp_kendra_wc1.png)
+![Web Chat developer tool](bp_kendra_wc1.png)
 
 You have have completed the configuration for the Lex-Kendra chatbot solution. Proceed to the next section to test the solution before you deploy it to your website.
 #### Test the Lex-Kendra solution
@@ -166,12 +166,12 @@ To help formulate test questions to elicit a specific response, you can use the 
 
 The question "What is the incubation period for the virus?" elicits a standard Lex intent. You can confirm this is a standard Lex intent by observing the response begins with the term "Amazon Lex". The bot icon in the text stream also confirms the response is from the bot.
 
-![Sample Question 1](/images/bp_kendra_TQ1.png)
+![Sample Question 1](bp_kendra_TQ1.png)
 
 **Sample Question 2**
 
 The question "What precautions can I take?" does not elicit a standard Lex intent, as there is no Lex intent preconfigured for that question. This question triggers a Kendra search and the response comes from a search of the document you uploaded into your S3 bucket. You can confirm this is a Lex-Kendra response by observing the response begins with the term "On searching the Enterprise repository".
-![Sample Question 2](/images/bp_kendra_TQ2.png)
+![Sample Question 2](bp_kendra_TQ2.png)
 
 ### Deploy the Lex-Kendra chatbot to your website
 
